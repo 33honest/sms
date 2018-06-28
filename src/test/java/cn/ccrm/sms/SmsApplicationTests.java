@@ -32,7 +32,7 @@ public class SmsApplicationTests {
 			String Password = smsConfig.getPassword();// 密码
 			String Timestemp = Utils.getTimestemp();// 时间戳
 			String Key = Utils.getKey(UserName, Password, Timestemp);// 加密
-			String serverAddress = "http://www.youxinyun.com:3070/Platform_Http_Service/servlet/GetBalance";// 请求的URL
+			String serverAddress = smsConfig.getUrl() + "Platform_Http_Service/servlet/GetBalance";// 请求的URL
 			StringBuffer _StringBuffer = new StringBuffer();
 			_StringBuffer.append("UserName=" + UserName + "&");
 			_StringBuffer.append("Key=" + Key + "&");
